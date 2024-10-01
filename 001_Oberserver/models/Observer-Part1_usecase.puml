@@ -1,0 +1,24 @@
+@startuml
+
+left to right direction
+actor NewsAgency as Agency << System >>
+actor NewsChannel as Channel << System >>
+
+rectangle "News Delivery" {
+
+ (broadcasts news to NewsChannels) as broadcast
+
+ (is notified about news) as notify
+
+ (unsubscribes from NewAgency) as unsubscribe
+
+ (subscribes to NewsAggency) as subscribe
+
+ }
+
+ Channel -->subscribe
+ Channel -->unsubscribe
+ Channel -->notify
+
+ Agency -->broadcast
+@enduml
